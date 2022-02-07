@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/c143000470.js" crossorigin="anonymous"></script>
     <title>show table</title>
 </head>
 
@@ -27,6 +28,7 @@
                 <td>{{ person["name"] }}</td>
                 <td>{{ person["age"] }}</td>
                 <td>{{ person["salary"] }}</td>
+                <td><i class="fas fa-search"></i> <i class="fas fa-pen"></i> <i class="fas fa-trash"></i></td>
             </tr>
             {% endfor %}
             {% else %}

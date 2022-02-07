@@ -36,6 +36,11 @@ def showTable():
             "age": 28,
             "salary": 650.0,
         },
+        {
+            "name": "fernanda",
+            "age": 32,
+            "salary": 750.0,
+        },
     ]
 
     """ personList = [] """
