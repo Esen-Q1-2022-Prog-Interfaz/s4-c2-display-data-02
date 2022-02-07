@@ -20,7 +20,29 @@ def home():
 
 @app.route("/table")
 def showTable():
-    return render_template("table.html")
+    personList = [
+        {
+            "name": "balbino",
+            "age": 23,
+            "salary": 300.0,
+        },
+        {
+            "name": "rod",
+            "age": 25,
+            "salary": 450.0,
+        },
+        {
+            "name": "gaby",
+            "age": 28,
+            "salary": 650.0,
+        },
+    ]
+
+    """ personList = [] """
+    return render_template(
+        "table.html",
+        personList=personList,
+    )
 
 
 if __name__ == "__main__":
