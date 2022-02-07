@@ -10,9 +10,19 @@
 
 <body>
     <h1>display data</h1>
+    <h3>{{ name }}</h3>
+    <h3>show paragraph: {{ showParagraph }}</h3>
+    {% if showParagraph %}
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta unde alias maxime possimus dignissimos sunt,
         neque temporibus, recusandae sint dolorum nulla molestias atque officia ipsum amet magnam accusantium inventore.
     </p>
+    {% else %}
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque repellat enim ex nisi omnis nulla harum, quidem
+        magnam facilis ipsam laboriosam cupiditate animi eum aperiam consectetur eligendi dolorem ad? Cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sunt eaque sequi aliquid eum amet, placeat
+        fugiat nostrum, mollitia laudantium neque quas praesentium dicta commodi quia et laboriosam ullam aliquam.</p>
+    <button>click me</button>
+    {% endif %}
 </body>
 
 </html>
