@@ -21,3 +21,12 @@ def selectAllPersonData():
             cursor.execute(sql)
             result = cursor.fetchall()
         return result
+
+
+def insertNewPerson():
+    connection = createConnectionToDB()
+    with connection:
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO `personinfodb`.`persondata`(`id`,`name`,`age`,`salary`) VALUES (%s,%s,%s,%s);"
+            cursor.execute(sql, (0,))
+        connection.commit()

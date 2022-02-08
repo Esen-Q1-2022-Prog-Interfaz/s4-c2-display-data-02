@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/c143000470.js"
+        integrity="sha384-IJaB7Ok396Vj8u9hotS7IJpDbI4MdHJ/WaoGDRxrr+UObhYk6JwAbI/HAfPPBrWH"
+        crossorigin="anonymous"></script>
+    <title>new person</title>
+</head>
+
+<body>
+    <h1>Create new Person</h1>
+
+    <div>
+        <form action="{{ url_for('insertNewPerson') }}" method="post">
+            <label for="name">name:
+                <input type="text" name="name" id="name" placeholder="add a name...">
+            </label>
+            <label for="age">age:
+                <input type="number" name="age" id="age" placeholder="add an age...">
+            </label>
+            <label for="salary">salary:
+                <input type="text" name="salary" id="salary" placeholder="0.00">
+            </label>
+
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</body>
+
+</html>
