@@ -1,6 +1,6 @@
-from crypt import methods
-from flask import Flask, render_template, request
-from db import selectAllPersonData
+from flask import Flask, render_template, request, redirect, url_for
+from db import selectAllPersonData, insertNewPerson
+from Person import Person
 
 app = Flask(__name__)
 
@@ -35,10 +35,16 @@ def newPerson():
 
 
 # default de las routes es GET
-@app.route("/table/insertNewPerson", methods=["POST"])
-def insertNewPerson():
+@app.route("/table/createNewPerson", methods=["POST"])
+def createNewPerson():
     if request.method == "POST":
-        
+        name = request.form.get("name")
+        age = int(request.form.get("age"))
+        salary = float(request.form.get("salary"))
+        newPerson = Person(name, age, salary)
+        print(newPerson)
+        insertNewPerson(newPerson)
+        return redirect(url_for("showTable"))
 
 
 if __name__ == "__main__":

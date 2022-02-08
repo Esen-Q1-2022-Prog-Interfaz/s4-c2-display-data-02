@@ -1,4 +1,5 @@
 import pymysql.cursors
+from Person import Person
 
 
 def createConnectionToDB():
@@ -23,10 +24,10 @@ def selectAllPersonData():
         return result
 
 
-def insertNewPerson():
+def insertNewPerson(person):
     connection = createConnectionToDB()
     with connection:
         with connection.cursor() as cursor:
             sql = "INSERT INTO `personinfodb`.`persondata`(`id`,`name`,`age`,`salary`) VALUES (%s,%s,%s,%s);"
-            cursor.execute(sql, (0,))
+            cursor.execute(sql, (person.id, person.name, person.age, person.salary))
         connection.commit()
