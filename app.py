@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from db import selectAllPersonData
 
 app = Flask(__name__)
 
@@ -20,30 +21,7 @@ def home():
 
 @app.route("/table")
 def showTable():
-    personList = [
-        {
-            "name": "balbino",
-            "age": 23,
-            "salary": 300.0,
-        },
-        {
-            "name": "rod",
-            "age": 25,
-            "salary": 450.0,
-        },
-        {
-            "name": "gaby",
-            "age": 28,
-            "salary": 650.0,
-        },
-        {
-            "name": "fernanda",
-            "age": 32,
-            "salary": 750.0,
-        },
-    ]
-
-    """ personList = [] """
+    personList = selectAllPersonData()
     return render_template(
         "table.html",
         personList=personList,
