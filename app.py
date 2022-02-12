@@ -10,7 +10,7 @@ def home():
     name = "pedro"
     showParagraph = True
     dayOfWeek = 100
-    numberList = ["bombom", "bellota", "burbuja"]
+    numberList = ["bombom", "bellota", "burbuja", "profesorUtonio"]
     return render_template(
         "home.html",
         name=name,
